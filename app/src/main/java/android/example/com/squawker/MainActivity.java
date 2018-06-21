@@ -86,9 +86,14 @@ public class MainActivity extends AppCompatActivity implements
         // Start the loader
         getSupportLoaderManager().initLoader(LOADER_ID_MESSAGES, null, this);
 
-        // TODO (1) Get the test data here from the extras bundle that came with this intent.
+        // TODO DONE(1) Get the test data here from the extras bundle that came with this intent.
         // To confirm that the data was passed in, make sure to show the data in a log statement.
 
+        Bundle extras = getIntent().getExtras();
+
+        if (extras != null && extras.containsKey("test")) {
+            Log.d(LOG_TAG, "Contains: " + extras.getString("test", "Nothing"));
+        }
     }
 
     @Override
