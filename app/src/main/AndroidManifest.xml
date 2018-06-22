@@ -33,9 +33,15 @@
                 android:value=".MainActivity" />
         </activity>
 
-        <!-- TODO (5) Add your new service here, with an intent filter for action
+        <!-- TODO DONE(5) Add your new service here, with an intent filter for action
         com.google.firebase.INSTANCE_ID_EVENT" -->
 
+        <service
+            android:name=".fcm.SquawkerInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
